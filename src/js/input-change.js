@@ -8,7 +8,12 @@ const Theme = {
     DARK: 'dark-theme',
 };
 
-refs.body.classList.add(localStorage.getItem('theme')?localStorage.getItem('theme'):Theme.LIGHT)
+refs.body.classList.add
+(localStorage.getItem('theme') === null ? localStorage.getItem('theme') : Theme.LIGHT);
+
+if (refs.body.classList.value === Theme.DARK) {
+    refs.inputCheckbox.checked = true;
+}
 
 const checkedTheme = event => {
     if (event.target.checked){
