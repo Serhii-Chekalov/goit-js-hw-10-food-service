@@ -9,7 +9,7 @@ const Theme = {
 };
 
 refs.body.classList.add
-(localStorage.getItem('theme') === null ? localStorage.getItem('theme') : Theme.LIGHT);
+(localStorage.getItem('theme') ? localStorage.getItem('theme') : Theme.LIGHT,);
 
 if (refs.body.classList.value === Theme.DARK) {
     refs.inputCheckbox.checked = true;
